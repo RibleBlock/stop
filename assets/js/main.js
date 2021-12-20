@@ -31,7 +31,7 @@ const nextLetter = document.querySelector('#next');
 nextLetter.addEventListener('click', () => {
     const atual = document.querySelector('#atual');
 
-    const num = getRandom();
+    const num = getRandom(0, 24);
     console.log(num);
     const letra = proximaLetra(num);
     atual.innerHTML = letra;
@@ -42,6 +42,7 @@ function proximaLetra(num) {
     return alfabeto[num];
 }
 
-function getRandom() {
-    return Math.round(Math.random() * (24 - 0) + 0);
+function getRandom(min, max) {
+    const r = Math.random() * (max - min) + min;
+    return Math.round(r);
 }

@@ -54,7 +54,6 @@ section {
     height: 100%;
     background-image: url('../img/bg-container2.png');
     background-repeat: no-repeat;
-    background-position: center;
     background-size: cover;
 
     display: grid;
@@ -72,6 +71,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    /* transform: translateY(calc(50vh / 2)); */
 }
 
 #content p {
@@ -124,7 +124,7 @@ section {
     }
     
     header {
-        justify-content: space-around;
+        justify-content: center;
         background-color: var(--pink);
     }
 
