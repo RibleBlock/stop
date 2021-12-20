@@ -32,7 +32,6 @@ nextLetter.addEventListener('click', () => {
     const atual = document.querySelector('#atual');
 
     const num = getRandom(0, 24);
-    console.log(num);
     const letra = proximaLetra(num);
     atual.innerHTML = letra;
 });
