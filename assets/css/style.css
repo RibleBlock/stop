@@ -20,6 +20,7 @@ button, input[type=submit] {
     font-weight: 700;
     margin: 0 .5rem;
     padding: 1.7rem 3rem;
+    cursor: pointer;
     color: #fff;
     border: 0;
     border-radius: 1.6rem;

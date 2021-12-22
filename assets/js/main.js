@@ -3,6 +3,7 @@ const form = document.querySelector('#form');
 const setSoma = document.querySelector('#soma');
 let soma = 0;
 
+// botao somar //
 form.addEventListener('submit', e => {
     e.preventDefault();
 
@@ -18,10 +19,17 @@ form.addEventListener('submit', e => {
     setSoma.innerHTML = soma;     
 });
 
+// botao ZERAR //
 const zerar = form.querySelector('[type=reset]');
 zerar.addEventListener('click', () => {
     soma = 0;
     setSoma.innerHTML = soma;     
+});
+
+// botao REINICIAR //
+const btReset = document.querySelector('#reset');
+btReset.addEventListener('click', () => {
+    location.reload(true)
 });
 
 // GERADOR DE LETRA ALEATÓRIA //
