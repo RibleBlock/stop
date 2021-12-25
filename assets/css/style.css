@@ -27,6 +27,10 @@ button, input[type=submit] {
     background-color: var(--pink);
 }
 
+button:hover, input[type=submit]:hover {
+    filter: brightness(1.1);
+}
+
 #container {
     height: 100vh;
     display: flex;
