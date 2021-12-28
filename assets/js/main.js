@@ -2,6 +2,7 @@
 const form = document.querySelector('#form');
 const setSoma = document.querySelector('#soma');
 let soma = 0;
+let jaFoi = [];
 
 // botao somar //
 form.addEventListener('submit', e => {
@@ -41,15 +42,32 @@ nextLetter.addEventListener('click', () => {
 
     const num = getRandom(0, 24);
     const letra = proximaLetra(num);
+    jaFoi.push(letra);
     atual.innerHTML = letra;
+    jaForam.innerHTML = jaFoi;
 });
 
 function proximaLetra(num) {
     const alfabeto = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Y', 'Z'];
-    return alfabeto[num];
+    let letra = ' ';
+    letra += alfabeto[num];
+    console.log(letra);
+    for(i in jaFoi) {
+        if(letra === jaFoi[i]) {
+            console.log(`JATEM: ${letra}`);
+            console.log(jaFoi);   
+            return proximaLetra(getRandom(0, 24));
+        }
+        if(jaFoi.length >= 25){
+            nextLetter.style.display = 'none';
+            return `todas as letras ja foram`;
+        }
+    }
+    return letra;
 }
 
 function getRandom(min, max) {
     const r = Math.random() * (max - min) + min;
     return Math.round(r);
 }
+
