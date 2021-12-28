@@ -9,7 +9,8 @@
     box-sizing: border-box;
 }
 
-html {
+html, body {
+    height: 100%;
     font-size: 62.5%;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -28,7 +29,7 @@ button, input[type=submit] {
 }
 
 #container {
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     background: linear-gradient(90deg, #8C52FF 20.75%, rgba(140, 82, 255, 0) 85.12%), #FF66C4;
@@ -106,13 +107,13 @@ section {
     margin-left: 1rem;
 }
 
-.boxletras {
-    display: none;
+#jaForam {
+    text-align: center;
 }
-
+/*
 .show {
     display: block;
-}
+} */
 
 /****************************************************/
 @media screen and (max-width: 445px) {
