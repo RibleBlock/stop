@@ -31,6 +31,9 @@ zerar.addEventListener('click', () => {
 const btReset = document.querySelector('#reset');
 btReset.addEventListener('click', () => {
     location.reload(true)
+
+    jaFoi = [];
+    salvarLetras();
 });
 
 // GERADOR DE LETRA ALEATÓRIA //
@@ -42,7 +45,6 @@ nextLetter.addEventListener('click', () => {
 
     const num = getRandom(0, 24);
     const letra = proximaLetra(num);
-    jaFoi.push(letra);
     atual.innerHTML = letra;
     jaForam.innerHTML = jaFoi;
 });
@@ -60,6 +62,9 @@ function proximaLetra(num) {
             return `todas as letras ja foram`;
         }
     }
+    jaFoi.push(letra);
+    salvarLetras();
+    console.log('ADICIONADO')
     return letra;
 }
 
@@ -68,3 +73,15 @@ function getRandom(min, max) {
     return Math.round(r);
 }
 
+function salvarLetras() {
+    const arrayJSON = JSON.stringify(jaFoi);
+    localStorage.setItem('letras', arrayJSON);
+}    
+
+function adicionaLetrasSalvas() {
+    
+    const saveLetter = JSON.parse(localStorage.getItem('letras'));
+    jaFoi = [...saveLetter];
+    jaForam.innerHTML = saveLetter;
+}
+adicionaLetrasSalvas()
