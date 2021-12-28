@@ -48,20 +48,19 @@ nextLetter.addEventListener('click', () => {
 });
 
 function proximaLetra(num) {
-    
     const alfabeto = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Y', 'Z'];
     let letra = ' ';
     letra += alfabeto[num];
     console.log(letra);
     for(i in jaFoi) {
-        if(jaFoi.length > 24){
-            nextLetter.style.display = 'none';
-            return `todas as letras ja foram`;
-        }
         if(letra === jaFoi[i]) {
             console.log(`JATEM: ${letra}`);
             console.log(jaFoi);   
             return proximaLetra(getRandom(0, 24));
+        }
+        if(jaFoi.length >= 25){
+            nextLetter.style.display = 'none';
+            return `todas as letras ja foram`;
         }
     }
     return letra;
