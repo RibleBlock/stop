@@ -79,14 +79,16 @@ section {
     /* transform: translateY(calc(50vh / 2)); */
 }
 
-#content p {
-    font-size: 2.7rem;
-    margin-bottom: 1rem;
+#content div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: -4px;
 }
 
-#content div:first-child > * {
-    display: inline-block;
-    margin-right: -4px;
+#content p {
+    font-size: 2.7rem;
+    /* margin-bottom: 1rem;  */
 }
 
 
@@ -104,10 +106,6 @@ section {
     font-family: 'Quando', serif;
     font-size: 3rem;
     letter-spacing: .2rem;
-}
-
-#atual {
-    margin-left: 1rem;
 }
 
 .boxletras {
