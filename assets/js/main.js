@@ -53,13 +53,13 @@ function proximaLetra(num) {
     const alfabeto = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Y', 'Z'];
     let letra = ' ';
     letra += alfabeto[num];
-    for(i in jaFoi) {
-        if(letra === jaFoi[i]) {
+    for(value of jaFoi) {
+        if(letra === value) {
             return proximaLetra(getRandom(0, 24));
         }
-        if(jaFoi.length >= 25){
+        if(jaFoi.length >= alfabeto.length){
             nextLetter.style.display = 'none';
-            return `todas as letras ja foram`;
+            return `Todas as letras já foram.`;
         }
     }
     jaFoi.push(letra);
@@ -78,10 +78,8 @@ function salvarLetras() {
     localStorage.setItem('letras', arrayJSON);
 }    
 
-function adicionaLetrasSalvas() {
-    
+(() => {    
     const saveLetter = JSON.parse(localStorage.getItem('letras'));
     jaFoi = [...saveLetter];
     jaForam.innerHTML = saveLetter;
-}
-adicionaLetrasSalvas()
+})();
