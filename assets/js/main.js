@@ -9,6 +9,7 @@ form.addEventListener('submit', e => {
     e.preventDefault();
 
     const getInput = form.querySelector('.input');
+    getInput.focus();
 
     let input = Number(getInput.value);
 
